@@ -1,0 +1,28 @@
+.list{
+    padding: 20px;
+}
+
+.movies{
+    margin: 0;
+    padding: 20px;
+}
+.item{
+    padding: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.item:hover,
+.item:focus {
+    color: red;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover,
+.link:focus {
+    color: red;
+}

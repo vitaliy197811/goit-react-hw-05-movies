@@ -1,0 +1,14 @@
+.section{
+    width: auto;
+}
+
+.header{
+    padding: 10px;
+    border-bottom: 1px solid black;
+    background-color: antiquewhite;
+}
+
+.nav{
+    display: flex;
+    gap: 40px;
+}
