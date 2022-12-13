@@ -1,9 +1,8 @@
-
-import css from './TrendingMooves.module.css';
 import { useEffect, useState } from 'react';
-import { Link  } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { getTrending } from 'service/api';
 import Loader from 'components/Loader/Loader';
+import css from './TrendingMooves.module.css';
 
 const TrendingMooves = () => {
     const [movies, setMovies] = useState([]);
@@ -23,6 +22,8 @@ const TrendingMooves = () => {
         renderMovies();
     }, []);
 
+    const location = useLocation();
+
     return (
         <>
             {loading && <Loader />}
@@ -30,7 +31,7 @@ const TrendingMooves = () => {
                 <ul className={css.movies}>
                     {movies.map(({ id, title }) => (
                         <li key={id} className={css.item} >
-                            <Link className={css.link}>{title}</Link>
+                            <Link className={css.link} to={`/movies/${id}`} state={{ from: location }}>{title}</Link>
                         </li>
                     ))}
                 </ul>

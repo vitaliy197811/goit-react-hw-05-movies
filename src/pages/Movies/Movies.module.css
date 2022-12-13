@@ -26,3 +26,17 @@
 .link:focus {
     color: red;
 }
+
+.input{
+    margin-right: 20px;
+}
+.button, .input{
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: rgba(187, 206, 119, 0.568);
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    padding: 10px;
+}

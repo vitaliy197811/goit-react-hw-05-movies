@@ -9,8 +9,8 @@ const Layout = () => {
         <section className={css.section}>
             <header className={css.header}>
                 <nav className={css.nav}>
-                    <NavLink to="/" end>Home</NavLink>
-                    <NavLink to="/movies">Movies</NavLink>
+                    <NavLink className={css.button} to="/" end>Home</NavLink>
+                    <NavLink className={css.button} to="/movies">Movies</NavLink>
                 </nav>
             </header>
             <Suspense fallback={<Loader />}>
