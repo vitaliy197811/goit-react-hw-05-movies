@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReview } from '../../service/api';
 import Loader from 'components/Loader/Loader';
+// import {toast} from 'react-toastify';
 import css from './Reviews.module.css';
 
 const Reviews = () => {
@@ -23,10 +24,14 @@ const Reviews = () => {
         renderReviews();
     }, [id]);
 
+    if (reviews === 0) {
+        <p>We don't have any reviews for this movie</p>
+    }
+
     return (
         <>
             {loading && <Loader />}
-            {reviews.total_pages === 0 && <p>We don't have any reviews for this movie</p> }
+            {!reviews && <h2>We don't have any reviews for this movie</h2> }
             {reviews && 
                 <ul className={css.reviews}>
                     {reviews.map(({ id, author, content }) => (

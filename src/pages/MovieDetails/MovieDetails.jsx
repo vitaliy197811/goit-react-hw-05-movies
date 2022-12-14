@@ -39,8 +39,8 @@ const MovieDetails = () => {
                         <h2> Additional information</h2>
                         <div>
                             <ul>
-                                <li><Link to="cast" state={{ from: location.state?.from ?? '/' }}>Cast</Link></li>
-                                <li><Link to="reviews" state={{ from: location.state?.from ?? '/' }}>Reviews</Link></li>
+                                <li><Link className={css.link} to="cast" state={{ from: location.state?.from ?? '/' }}>Cast</Link></li>
+                                <li><Link className={css.link} to="reviews" state={{ from: location.state?.from ?? '/' }}>Reviews</Link></li>
                             </ul>
                         </div>
                         <Suspense fallback={<div>Loading...</div>}>

@@ -4,7 +4,6 @@ import { useSearchParams, Link, useLocation  } from 'react-router-dom';
 import { getSearchQuery } from 'service/api';
 import Loader from 'components/Loader/Loader';
 import css from './Movies.module.css';
-// import MovieDetails from 'components/MovieDetails/MovieDetails';
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
@@ -50,6 +49,7 @@ const Movies = () => {
                 <button className={css.button} type="submit">Search</button>
             </form>
             {loading && <Loader />}
+            {movies.length ===0 && <h2>No movies found for your search query</h2> }
             {movies && (
                 <ul className={css.movies}>
                     {movies.map(({ id, title }) => (

@@ -26,5 +26,5 @@ export async function geCast(id) {
 export async function getReview(id) {
     
     const { data } = await axios.get(`${URL}/movie/${id}/reviews?api_key=${KEY}&language=en-US&page=1`);
-    return data.results;
+    return data.result;
 }
