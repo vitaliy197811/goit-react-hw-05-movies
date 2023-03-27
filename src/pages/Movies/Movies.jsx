@@ -1,4 +1,3 @@
-// import css from './Movies.module.css';
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link, useLocation  } from 'react-router-dom';
 import { getSearchQuery } from 'service/api';
@@ -18,7 +17,6 @@ const Movies = () => {
 
     const submit = e => {
         e.preventDefault();
-        
         setSearchParams({ query: query });
         setQuery('');
     };
@@ -49,7 +47,7 @@ const Movies = () => {
                 <button className={css.button} type="submit">Search</button>
             </form>
             {loading && <Loader />}
-            {movies.length ===0 && <h2>No movies found for your search query</h2> }
+            {query === '' &&  movies.length === 0 && <h2>No movies found for your search query</h2> }
             {movies && (
                 <ul className={css.movies}>
                     {movies.map(({ id, title }) => (
